@@ -72,9 +72,15 @@ public class JwtService {
         return expiration.before(new Date());
     }
 
-    // Blacklist (sẽ implement sau khi có TokenBlacklistRepository)
+    // Blacklist Token
+    public void blacklistToken(String token) {
+        // TODO: Implement full blacklist with repository
+        System.out.println("[AUDIT] Token blacklisted: " + token);
+        // For now, just log
+    }
+
     public boolean isTokenBlacklisted(String token) {
-        // TODO: Kiểm tra trong DB TokenBlacklist
+        // TODO: Check DB
         return false;
     }
 }
